@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RGUKT ECE Grading System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="RGUKT Logo">
+    <h1 class="animate-heading">RGUKT - AP </h1>
+    <h1 class="animate-heading">Electronics & Communication Engineering</h1>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main>
+    <section class="input-section">
+      <label for="year">Select Year:</label>
+      <select id="year">
+        <option value="">--Select Year--</option>
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+        <option value="4">4th Year</option>
+      </select>
+
+      <label for="semester">Select Semester:</label>
+      <select id="semester">
+        <option value="">--Select Semester--</option>
+        <option value="1">Sem 1</option>
+        <option value="2">Sem 2</option>
+      </select>
+      <button onclick="loadSubjects()">Load Subjects</button>
+    </section>
+
+    <section id="subjects-table-section"></section>
+
+    <div class="actions">
+      <button onclick="calculateSGPA()">🎓 Calculate SGPA</button>
+      <button onclick="downloadPDF()">⬇️ Download Report</button>
+    </div>
+
+    <section id="results"></section>
+
+    <div id="congrats-animation" class="hidden">
+      <p>🎉 Congratulations! SGPA Calculated! 🎉</p>
+      <div class="flowers">🌸🌺🌼🌻🌷</div>
+    </div>
+
+    <div id="confetti-container"></div>
+  </main>
+
+  <footer>
+    <h2 class="user-name" style="margin:0.5rem 0 0.2rem 0; font-size:1.1rem; color:#FFD700; letter-spacing:2px; text-align:center;">
+      Developed by RK
+    </h2>
+    <p>© 2025 Rajiv Gandhi University of Knowledge Technologies - Ongole</p>
+  </footer>
+
+  <!-- Add this before your script.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
+  
+  <div id="emoji-burst" style="pointer-events:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10000;"></div>
+</body>
+</html>
